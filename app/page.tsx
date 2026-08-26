@@ -1,69 +1,19 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main>
+      <section className="hero" id="home">
+        <nav className="nav wrap" aria-label="Main navigation">
+          <a className="brand" href="#home"><span className="brand-mark" aria-hidden="true"><i /><i /><i /></span><span>Teel Mountain<br /><em>Homeowners Association</em></span></a>
+          <div className="nav-links"><a href="#welcome">Our community</a><a href="#rules">Community rules</a><a href="#contact">Contact</a></div>
+          <a className="nav-button" href="/login">Resident portal <span aria-hidden="true">↗</span></a>
+        </nav>
+        <div className="hero-content wrap"><p className="eyebrow light">North Georgia · Since 1998</p><h1>A good place<br /><span>to come home to.</span></h1><p className="hero-copy">Neighbors, nature, and the little rituals that make mountain living feel like home.</p><a className="round-link" href="#welcome" aria-label="Explore Teel Mountain">Explore <span aria-hidden="true">↓</span></a></div>
+        <div className="hero-note"><span>North Georgia foothills</span><span className="note-rule" /><span>Cleveland · Helen</span></div>
+      </section>
+      <section className="welcome wrap" id="welcome"><div className="section-kicker"><span>01</span><span className="kicker-line" /><span>Life at Teel Mountain</span></div><div className="welcome-grid"><h2>Rooted in the<br /><i>good stuff.</i></h2><div className="welcome-copy"><p>Teel Mountain is a quiet community tucked among the ridges of North Georgia. We look out for the land, keep an eye on one another, and make room for the everyday moments that matter.</p><a className="text-link" href="#contact">Meet your neighbors <span>↗</span></a></div></div><div className="stats"><div><strong>120</strong><span>mountain homes</span></div><div><strong>25</strong><span>acres of shared greenspace</span></div><div><strong>4</strong><span>seasons to enjoy</span></div></div></section>
+      <section className="rules-section" id="rules"><div className="wrap rules-layout"><div><div className="section-kicker dark-kicker"><span>02</span><span className="kicker-line" /><span>Good neighbors</span></div><h2>Our shared<br /><i>way of life.</i></h2><p className="rules-intro">A few simple guidelines help keep Teel Mountain beautiful, peaceful, and welcoming for everyone.</p><a className="outline-link" href="#contact">View complete covenants <span>↗</span></a></div><div className="rule-list"><article><span>01</span><div><h3>Care for the land</h3><p>Protect our trees, waterways, and mountain views. Native landscaping is always encouraged.</p></div></article><article><span>02</span><div><h3>Keep it neighborly</h3><p>Quiet hours are 10pm–7am. Please be considerate with gatherings, pets, and shared spaces.</p></div></article><article><span>03</span><div><h3>Build with intention</h3><p>Exterior changes and new structures require architectural review before work begins.</p></div></article></div></div></section>
+      <section className="contact wrap" id="contact"><div className="section-kicker"><span>03</span><span className="kicker-line" /><span>Stay in touch</span></div><div className="contact-grid"><div><h2>We’re here<br /><i>to help.</i></h2><p>Questions about your home, the neighborhood, or an upcoming meeting? Reach out anytime.</p></div><div className="contact-details"><div><span className="detail-label">Association office</span><p>1234 Teel Mountain Road<br />Blue Ridge, GA 30513</p></div><div><span className="detail-label">Get in touch</span><p><a href="mailto:hello@teelmountainhoa.com">hello@teelmountainhoa.com</a><br /><a href="tel:+17065550198">(706) 555-0198</a></p></div></div></div></section>
+      <footer className="footer"><div className="wrap footer-inner"><span>© 2026 Teel Mountain HOA</span><span>Made for mountain living <i>⌁</i></span><a href="#home">Back to top ↑</a></div></footer>
+    </main>
   );
 }
