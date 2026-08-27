@@ -43,3 +43,33 @@ create policy "Authenticated residents can read HOA documents"
   on storage.objects for select
   to authenticated
   using (bucket_id = 'hoa-documents');
+
+create table if not exists public.amenity_images (
+  id uuid primary key default gen_random_uuid(),
+  title text not null,
+  image_url text not null,
+  created_at timestamptz not null default now()
+);
+
+alter table public.amenity_images enable row level security;
+
+create policy "Anyone can view amenity images"
+  on public.amenity_images for select
+  using (true);
+
+create policy "Admins can add amenity images"
+  on public.amenity_images for insert
+  to authenticated
+  with check ((auth.jwt() -> 'app_metadata' ->> 'role') = 'admin');
+
+insert into storage.buckets (id, name, public)
+values ('amenities-images', 'amenities-images', true)
+on conflict (id) do nothing;
+
+create policy "Admins can upload amenity images"
+  on storage.objects for insert
+  to authenticated
+  with check (
+    bucket_id = 'amenities-images'
+    and (auth.jwt() -> 'app_metadata' ->> 'role') = 'admin'
+  );

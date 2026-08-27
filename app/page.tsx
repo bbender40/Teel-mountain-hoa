@@ -4,7 +4,7 @@ export default function Home() {
       <section className="hero" id="home">
         <nav className="nav wrap" aria-label="Main navigation">
           <a className="brand" href="#home"><span className="brand-mark" aria-hidden="true"><i /><i /><i /></span><span>Teel Mountain<br /><em>Homeowners Association</em></span></a>
-          <div className="nav-links"><a href="#welcome">Our community</a><a href="#rules">Community rules</a><a href="#contact">Contact</a></div>
+          <div className="nav-links"><a href="#welcome">Our community</a><a href="/amenities">Amenities</a><a href="#rules">Community rules</a><a href="#contact">Contact</a></div>
           <a className="nav-button" href="/login">Resident portal <span aria-hidden="true">↗</span></a>
         </nav>
         <div className="hero-content wrap"><p className="eyebrow light">North Georgia · Since 1998</p><h1>A good place<br /><span>to come home to.</span></h1><p className="hero-copy">Neighbors, nature, and the little rituals that make mountain living feel like home.</p><a className="round-link" href="#welcome" aria-label="Explore Teel Mountain">Explore <span aria-hidden="true">↓</span></a></div>
