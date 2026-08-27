@@ -4,6 +4,7 @@ import { ChangeEvent, DragEvent, useEffect, useState } from "react";
 import Link from "next/link";
 import type { User } from "@supabase/supabase-js";
 import { createSupabaseBrowserClient } from "../../lib/supabase-browser";
+import PublicNav from "../components/public-nav";
 
 type AmenityImage = { id: string; title: string; image_url: string; created_at: string };
 
@@ -93,7 +94,7 @@ export default function AmenitiesPage() {
   return (
     <main className="amenities-page">
       <section className="amenities-hero">
-        <nav className="nav wrap" aria-label="Main navigation"><Link className="brand" href="/"><span className="brand-mark" aria-hidden="true"><i /><i /><i /></span><span>Teel Mountain<br /><em>Homeowners Association</em></span></Link><div className="nav-links"><Link href="/#welcome">Our community</Link><Link href="/amenities">Amenities</Link><Link href="/#contact">Contact</Link></div><Link className="nav-button" href="/login">Resident portal <span aria-hidden="true">↗</span></Link></nav>
+        <PublicNav current="amenities" />
         <div className="amenities-hero-content wrap"><p className="eyebrow light">Life outdoors · North Georgia</p><h1>Room to<br /><span>gather.</span></h1><p>Beautiful views, easy afternoons, and spaces made for being together.</p></div>
         {currentImage ? <div className="amenities-slide" style={{ backgroundImage: `url(${currentImage.image_url})` }} aria-label={currentImage.title} /> : <div className="amenities-slide amenities-placeholder" aria-label="Mountains and community amenities" />}
         {images.length > 0 && <div className="slide-controls" aria-label="Slideshow controls">{images.map((image, index) => <button className={index === activeImage ? "active" : ""} key={image.id} onClick={() => setActiveImage(index)} aria-label={`Show ${image.title}`} />)}</div>}
